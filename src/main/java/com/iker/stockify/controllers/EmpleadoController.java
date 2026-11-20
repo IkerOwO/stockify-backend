@@ -1,4 +1,4 @@
-package com.iker.stockify;
+package com.iker.stockify.controllers;
 
 import com.iker.stockify.dtos.EmpleadoRegisterRequest;
 import com.iker.stockify.dtos.LoginRequest;
