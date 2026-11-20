@@ -30,7 +30,7 @@ public class EmpleadoService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return repository.findByUsername(username)
+        return repository.findByUsuario(username)
                 .map(SecurityUser::new)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found!"));
     }
@@ -46,7 +46,7 @@ public class EmpleadoService implements UserDetailsService {
         empleado.setEmail(request.getEmail());
         empleado.setPassword(encoder.encode(request.getPassword()));
         empleado.setRole(request.getRole());
-        empleado.setCuenta_activa(true); // Valor por defecto al crearla
+        empleado.setCuenta_activa(true); // Valor por defecto al crear una cuenta de empleado
         empleado.setFecha_incorporacion(request.getFecha_incorporacion());
         repository.save(empleado);
     }

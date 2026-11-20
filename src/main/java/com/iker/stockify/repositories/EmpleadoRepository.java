@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface EmpleadoRepository extends JpaRepository<Empleado, Long> {
     Optional<Empleado> findByEmail(String email);
 
-    Optional<Empleado> findByUsername(String username);
+    Optional<Empleado> findByUsuario(String username);
 
     @Query("SELECT u.role FROM Empleado u WHERE u.email = ?1")
     Optional<String> getRoleByEmail(String email);
