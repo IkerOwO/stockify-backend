@@ -17,6 +17,6 @@ public class PagoService {
 
     @Transactional(readOnly = true)
     public List<Pago> getByPaymentType(String tipoPago) {
-        return repository.getBytipo_pago(tipoPago);
+        return repository.getByTipo_pago(tipoPago);
     }
 }
