@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_empleado;
     private String nombre;
     private String apellidos;
     private String usuario;
