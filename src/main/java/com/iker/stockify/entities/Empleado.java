@@ -28,7 +28,8 @@ public class Empleado {
 
     public Empleado() { }
 
-    public Empleado(String nombre, String apellidos, String usuario, String email, String password, Role role, boolean cuenta_activa, LocalDate fecha_incorporacion) {
+    public Empleado(String nombre, String apellidos, String usuario, String email, String password, Role role,
+                    boolean cuenta_activa, LocalDate fecha_incorporacion) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.usuario = usuario;
