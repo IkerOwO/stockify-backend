@@ -1,9 +1,9 @@
 package com.iker.stockify.services;
 
 import com.iker.stockify.dtos.RegisterClientRequest;
-import com.iker.stockify.entities.Clientes;
+import com.iker.stockify.entities.Cliente;
 import com.iker.stockify.exceptions.ClientAlreadyExistsException;
-import com.iker.stockify.repositories.ClientesRepository;
+import com.iker.stockify.repositories.ClienteRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -11,22 +11,22 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 @Service
-public class ClientesService {
-    private final ClientesRepository repository;
+public class ClienteService {
+    private final ClienteRepository repository;
     private final PasswordEncoder encoder;
 
-    public ClientesService(ClientesRepository repository, PasswordEncoder encoder) {
+    public ClienteService(ClienteRepository repository, PasswordEncoder encoder) {
         this.repository = repository;
         this.encoder = encoder;
     }
 
     public void createClientAccount(RegisterClientRequest request) {
-        Optional<Clientes> opCliente = repository.findByemail(request.getEmail());
+        Optional<Cliente> opCliente = repository.findByemail(request.getEmail());
 
         if (opCliente.isPresent()) {
             throw new ClientAlreadyExistsException("Cliente ya registrado!");
         }
-        Clientes cliente = new Clientes();
+        Cliente cliente = new Cliente();
         cliente.setNombre(request.getNombre());
         cliente.setApellidos(request.getApellidos());
         cliente.setDomicilio(request.getDomicilio());

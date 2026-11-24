@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 import java.util.Optional;
 
-public interface ProductosRepository extends JpaRepository<Productos, Long> {
+public interface ProductoRepository extends JpaRepository<Productos, Long> {
     List<Productos> getByCategoria(Categoria categoria);
     Optional<Productos> getBycodigo_barras(String codigoBarras);
     Optional<Productos> findBycodigo_barras(String codigoBarras);

@@ -1,6 +1,6 @@
 package com.iker.stockify.controllers;
 
-import com.iker.stockify.dtos.EmpleadoRegisterRequest;
+import com.iker.stockify.dtos.RegisterEmpleadoRequest;
 import com.iker.stockify.dtos.LoginRequest;
 import com.iker.stockify.dtos.LoginResponse;
 import com.iker.stockify.services.EmpleadoService;
@@ -20,7 +20,7 @@ public class EmpleadoController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> createUser(@Valid @RequestBody EmpleadoRegisterRequest request) {
+    public ResponseEntity<?> createUser(@Valid @RequestBody RegisterEmpleadoRequest request) {
         service.createUser(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

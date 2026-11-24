@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class EmpleadoRegisterRequest {
+public class RegisterEmpleadoRequest {
     @NotBlank
     private String nombre;
     @NotBlank

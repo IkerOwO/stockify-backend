@@ -1,6 +1,6 @@
 package com.iker.stockify.services;
 
-import com.iker.stockify.dtos.EmpleadoRegisterRequest;
+import com.iker.stockify.dtos.RegisterEmpleadoRequest;
 import com.iker.stockify.dtos.LoginRequest;
 import com.iker.stockify.dtos.LoginResponse;
 import com.iker.stockify.entities.Empleado;
@@ -38,7 +38,7 @@ public class EmpleadoService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found!"));
     }
 
-    public void createUser(EmpleadoRegisterRequest request) {
+    public void createUser(RegisterEmpleadoRequest request) {
         if (repository.existsByEmail(request.getEmail())) {
             throw new UserAlreadyExistsException("Email associated with another account");
         }

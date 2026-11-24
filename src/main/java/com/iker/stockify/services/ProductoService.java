@@ -5,7 +5,7 @@ import com.iker.stockify.entities.Categoria;
 import com.iker.stockify.entities.Productos;
 import com.iker.stockify.exceptions.ProductAlreadyExistsException;
 import com.iker.stockify.exceptions.ProductDoesntExistsException;
-import com.iker.stockify.repositories.ProductosRepository;
+import com.iker.stockify.repositories.ProductoRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductosService {
-    private final ProductosRepository repository;
+public class ProductoService {
+    private final ProductoRepository repository;
 
-    public ProductosService(ProductosRepository repository) {
+    public ProductoService(ProductoRepository repository) {
         this.repository = repository;
     }
 

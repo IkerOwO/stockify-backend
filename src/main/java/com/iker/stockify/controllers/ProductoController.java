@@ -3,7 +3,7 @@ package com.iker.stockify.controllers;
 import com.iker.stockify.dtos.RegisterProductRequest;
 import com.iker.stockify.entities.Categoria;
 import com.iker.stockify.entities.Productos;
-import com.iker.stockify.services.ProductosService;
+import com.iker.stockify.services.ProductoService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +16,9 @@ import java.util.Optional;
 @RequestMapping("/product")
 @CrossOrigin(origins = "*")
 public class ProductoController {
-    private final ProductosService service;
+    private final ProductoService service;
 
-    public ProductoController(ProductosService service) {
+    public ProductoController(ProductoService service) {
         this.service = service;
     }
 

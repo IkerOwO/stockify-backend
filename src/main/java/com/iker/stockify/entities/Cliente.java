@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Table(name = "clientes")
 @Getter
 @Setter
-public class Clientes {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_cliente;
@@ -26,11 +26,11 @@ public class Clientes {
     private boolean cuenta_activa;
     private LocalDate fecha_creacion_cuenta;
 
-    public Clientes() { }
+    public Cliente() { }
 
-    public Clientes(String nombre, String apellidos, String domicilio,
-                    String nombre_usuario, String email, String contrasenya, boolean cuenta_activa,
-                    LocalDate fecha_creacion_cuenta) {
+    public Cliente(String nombre, String apellidos, String domicilio,
+                   String nombre_usuario, String email, String contrasenya, boolean cuenta_activa,
+                   LocalDate fecha_creacion_cuenta) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.domicilio = domicilio;
