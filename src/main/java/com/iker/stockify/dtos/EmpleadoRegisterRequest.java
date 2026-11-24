@@ -24,7 +24,6 @@ public class EmpleadoRegisterRequest {
     @Email
     private String email;
     private Role role;
-    private boolean cuenta_activa;
     private LocalDate fecha_incorporacion;
 
 }

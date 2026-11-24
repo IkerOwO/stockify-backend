@@ -15,6 +15,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 public class EmpleadoService implements UserDetailsService {
@@ -61,10 +64,20 @@ public class EmpleadoService implements UserDetailsService {
 
         return new LoginResponse(
                 jwtService.generateToken(empleado),
-                empleado.getId(),
+                empleado.getId_empleado(),
                 empleado.getUsuario(),
                 empleado.getEmail(),
                 empleado.getRole().toString()
         );
+    }
+
+    @Transactional
+    public void updateAccountActiva(Long id, boolean isActive) {
+        Optional<Empleado> opEmpleado = repository.findById(id);
+        if (opEmpleado.isPresent()) {
+            Empleado empleado = opEmpleado.get();
+            empleado.setCuenta_activa(isActive);
+            repository.save(empleado);
+        }
     }
 }

@@ -1,3 +1,4 @@
+name: "stockify"
 services:
   app:
     build:

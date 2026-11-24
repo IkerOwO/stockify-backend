@@ -29,4 +29,10 @@ public class EmpleadoController {
     public ResponseEntity<LoginResponse> loginUser(@Valid @RequestBody LoginRequest request) {
         return ResponseEntity.ok(service.loginUser(request));
     }
+
+    @PutMapping("/{id}/cuentaActiva")
+    public ResponseEntity<?> updateAccountActiva(@Valid @RequestBody boolean cuentaActiva, @PathVariable Long id) {
+        service.updateAccountActiva(id, cuentaActiva);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }
